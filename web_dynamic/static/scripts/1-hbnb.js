@@ -6,7 +6,8 @@ $(document).ready(() => {
     const id = target.getAttribute('data-id');
     if (target.checked) {
       dictionarySaveId[id] = name;
-      $('.amenities h4').text(dictionarySaveId[id]);
+      let h4Add = $('.amenities h4')
+      h4Add.text(Object.values(dictionarySaveId) .join(', '));
     } else {
       delete dictionarySaveId[id];
     }
